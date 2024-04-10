@@ -1,0 +1,74 @@
+How to Use
+**********
+
+We will start a demo to perform the operations of UHMI protocol.
+
+Before going to this demo, make sure all required steps in `How to setup <howtosetup.html#section>`__ are finished successfully.
+
+In this Demo, we will run RVGPU locally (both sender and receiver located on the same machine via the localhost interface).
+You can transfer commands to another PC by assigning receiver PC's IP address and Port instead.
+
+**Step 1: After logging in with Ubuntu on Wayland, prepare two terminals. One terminal is for Receiver and the other is for Sender**
+
+**Step 2: Load virtio-gpu and virtio-lo kernel modules**
+
+.. code-block:: shell
+
+    $ sudo modprobe virtio-lo
+    $ sudo modprobe virtio_gpu
+
+**Step 3: On receiver terminal, execute the following command to start rvgpu-renderer**
+
+.. code-block:: shell
+
+    $ rvgpu-renderer -b 1280x720@0,0 -p 55667
+
+Parameters:
+
+- **rvgpu-renderer:** Receiver application
+- **-b 1280x720@0,0:** The rederer box with resolution 1280x720 and location coordinate at (0,0) (top left corner)
+- **-p 55667:** Server open on port 55667
+
+**Step 4: On sender terminal, execute the following command to start rvgpu-proxy**
+
+.. code-block:: shell
+
+    $ sudo su
+    $ rm -rf /run/user/0
+    $ mkdir -p /run/user/0
+    $ export XDG_RUNTIME_DIR=/run/user/0
+    $ rvgpu-proxy -l 0 -s 1280x720@0,0 -n 127.0.0.1:55667 &
+    $ export LD_LIBRARY_PATH=/usr/lib/mesa-virtio
+    $ weston --backend drm-backend.so --tty=2 --seat=seat_virtual -i 0 --log=/tmp/weston.log &
+
+Parameters for sender command **$ rvgpu-proxy -l 0 -s 1280x720@0,0 -n 127.0.0.1 &**:
+
+- **rvgpu-proxy:** Sender application
+- **-l 0:** Sestion timeout disable
+- **-s 1280x720@0,0:** Scanout box with resolution 1280x720 and location coordinate at (0,0) (top left corner)
+- **-n 127.0.0.1:55667 &:** Send data to server with IP address 127.0.0.1 (localhost) and port 55667
+
+At this step, the gray screen of Weston desktop can be displayed, so when you execute applications, the drawing is transferred to localhost:
+
+.. code-block:: shell
+
+    $ glmark2-es2-wayland
+
+.. image:: /images/remoteDrawing.PNG
+   :alt: Remote Drawing
+
+**Step 5: Stop the operation**
+Currently, there are some runing processes, such as rvgpu-renderer, rvgpu-proxy, weston, glmark2-es2-wayland. We have to terminate them:
+
+**Note:** 
+
+- Because these processes are started in the order of rvgpu-renderer, rvgpu-proxy, weston, glmark2-es2-wayland, the process termination order need to be reversed. If not, Zombie processes will be appeared.
+- We need to terminate processes on Sender Terminal.
+
+It is necessary to terminate the processes in the order shown in the commands below.
+
+.. code-block:: shell
+
+    $pkill weston
+    $pkill rvgpu-proxy
+    $pkill rvgpu-renderer

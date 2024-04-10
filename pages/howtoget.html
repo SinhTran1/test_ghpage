@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Get It &mdash; UnifiedHMI 1.0.0 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to Set up" href="howtosetup.html" />
+    <link rel="prev" title="Welcome to Unified HMI" href="welcome.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> UnifiedHMI
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome to Unified HMI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Get It</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#about">About</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-development-pc">Setup development PC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloading-agl-software">Downloading AGL Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#download-the-agl-source-files">Download the AGL Source Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directory-structure-after-downloading">Directory structure after downloading</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#initialize-buid-and-deploy">Initialize, Buid and Deploy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="howtosetup.html">How to Set up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtouse.html">How to Use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtocontribute.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">LICENSE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Contributor Covenant Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">UnifiedHMI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>How to Get It</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/pages/howtoget.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="how-to-get-it">
+<h1>How to Get It<a class="headerlink" href="#how-to-get-it" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<p>This manual describes the Yocto development environment used in Unified HMI project and AGL (Automotive Grade Linux).</p>
+<p><strong>NOTE:</strong> This entire section presumes you want to build an image. The supported images exist for several boards as well as for the Quick EMUlator (QEMU). In this manual, we will guide how to build an image and run on QEMU virtual machine.</p>
+</div>
+<div class="section" id="setup-development-pc">
+<h2>Setup development PC<a class="headerlink" href="#setup-development-pc" title="Permalink to this headline">¶</a></h2>
+<p>Preparing your build host so that it can build an AGL image means making sure your system is set up to use the Yocto Project OpenEmbedded build system, which is based on BitBake.</p>
+<p>This section presents minimal information so you can prepare the build host to use the “Dunfell” version of the Yocto Project (i.e. version 3.1.2).</p>
+<ul class="simple">
+<li>The recommand building hosts are: Ubuntu-20.04</li>
+<li>Be Sure Your Build Host Has Enough Free Disk Space: Your build host should have at least 100 Gbytes.</li>
+<li>Your Build Host should have 8GB RAM or greater.</li>
+<li>Git 1.8.3.1 or greater</li>
+<li>Tar 1.27 or greater</li>
+<li>Python 3.4.0 or greater</li>
+</ul>
+</div>
+<div class="section" id="downloading-agl-software">
+<h2>Downloading AGL Software<a class="headerlink" href="#downloading-agl-software" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download-the-agl-source-files">
+<h3>Download the AGL Source Files<a class="headerlink" href="#download-the-agl-source-files" title="Permalink to this headline">¶</a></h3>
+<p>How to download AGL steps, you can refer <a class="reference external" href="https://docs.automotivelinux.org/en/master/#0_Getting_Started/2_Building_AGL_Image/2_Downloading_AGL_Software/">this link</a>.</p>
+</div>
+<div class="section" id="directory-structure-after-downloading">
+<h3>Directory structure after downloading<a class="headerlink" href="#directory-structure-after-downloading" title="Permalink to this headline">¶</a></h3>
+<p>Listing out the resulting directory structure appears as follows:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ tree -L <span class="m">1</span>
+.
+├── bsp
+├── external
+├── meta-agl
+├── meta-agl-demo
+├── meta-agl-devel
+├── meta-rvgpu
+</pre></div>
+</div>
+<ul class="simple">
+<li>meta-agl: Minimal set of software needed to create an AGL distribution used to boot a system.</li>
+<li>meta-agl-demo: Provides a reference or demo platform and applications for the AGL Distribution. The reference UI is part of the meta-agl-demo layer.</li>
+<li>meta-agl-devel: Contains components under development or being tested. This layer also contains software packages that OEMs need but do not exist in AGL.</li>
+<li>meta-rvgpu: UHMI layer for AGL Yocto project building.</li>
+<li>Bsp: Provides support for specified platforms (renesas, raspberrypi…) for use with OpenEmbedded and/or Yocto.</li>
+<li>External: This layer contains poky and other Yocto Project Compatible layers that inclusion of technologies, hardware components, and software components: clang, security…</li>
+</ul>
+</div>
+</div>
+<div class="section" id="initialize-buid-and-deploy">
+<h2>Initialize, Buid and Deploy<a class="headerlink" href="#initialize-buid-and-deploy" title="Permalink to this headline">¶</a></h2>
+<p>Please refer the guides of AGL:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://docs.automotivelinux.org/en/master/#0_Getting_Started/2_Building_AGL_Image/3_Initializing_Your_Build_Environment/">How to Initialize building environment</a></li>
+<li><a class="reference external" href="https://docs.automotivelinux.org/en/master/#0_Getting_Started/2_Building_AGL_Image/4_Customizing_Your_Build/">How to Customize your buildi</a></li>
+<li><a class="reference external" href="https://docs.automotivelinux.org/en/master/#0_Getting_Started/2_Building_AGL_Image/5_0_Building_the_AGL_Image/">How to build and deploy</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="welcome.html" class="btn btn-neutral float-left" title="Welcome to Unified HMI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="howtosetup.html" class="btn btn-neutral float-right" title="How to Set up" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Panasonic Corporation.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

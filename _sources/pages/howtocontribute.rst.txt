@@ -1,0 +1,237 @@
+How to Contribute
+=================
+
+Contributing
+************
+
+First off, thank you for considering contributing to Unified HMI project. It’s people like you 
+that make UHMI such a great library.
+
+This project adheres to the Contributor Covenant `Code of conduct <code_of_conduct.html#section>`__. 
+By participating, you are expected to uphold this code. Please report unacceptable behavior 
+to <T.B.D email>.
+
+The following is a set of guidelines for contributing to UHMI. These are just 
+guidelines, not rules, use your best judgment and feel free to propose changes to 
+this document in a pull request.
+
+Here are some contributions you can make for our UHMI library become better:
+
+- Starting topics for discussing
+- Reporting Bugs
+- Suggesting Enhancements
+- Creating Pull Requests for fixing issues
+
+We will discuss about them more deeply in sections below.
+
+**Note:**
+Before creating an issue or starting a discussion topic, please check this list <T.B.D reference link to Github Issues> and this list <T.B.D reference link to Github discussion> as you might find out that you don't need to create one.
+
+Starting topics for discussing
+-------------------------------
+
+You can starting a topic for lightweight communication, such as a clarifying or how-to question.
+This will help you clarify your questions, and another people can have answers if they have the 
+same question as you.
+
+You also can raise a topic for discussing about something that you suppose it is a bug or need 
+an enhancement.
+
+Please enter here to start a new discussion <T.B.D reference link to Github discussion>
+
+.. image:: /images/discussion.PNG
+   :alt: Github Issues
+
+Reporting Bugs
+--------------
+This section guides you through submitting a bug report for UHMI. Following these guidelines 
+helps maintainers and the community understand your report, reproduce the behavior, 
+and find related reports.
+
+When you are creating a bug report, please include as many details as possible. 
+Fill out the required template, the information it asks for helps us resolve issues faster.
+
+Explain the problem and include additional details to help maintainers reproduce the problem.
+Please add the items belows as much as possible:
+
+* Use a clear and descriptive title for the issue to identify the problem.
+* Which version of UHMI are you using.
+* What's the name and version of the OS you're using.
+* Describe the exact steps which reproduce the problem in as many details as possible.
+* Provide specific examples to demonstrate the bug. Include links to your files or projects, or copy/pasteable snippets, which you use in those examples.
+* Describe the behavior you observed after following the steps and point out what exactly is the problem with that behavior.
+* Explain which behavior you expected to see instead and why.
+* Include screenshots and animated GIFs which show you following the described steps and clearly demonstrate the problem.
+* If you're reporting that UHMI crashed, include a crash report with a stack trace from the operating system.
+
+**Note:**
+
+If you find a closed bug issue that seems like it is the same thing that you're experiencing, open a 
+new Github issue and include a link to the original Github issue in the body of your new one.
+
+Please enter `Issue`_  for finding how to raise a new bug.
+
+Suggesting Enhancements
+-----------------------
+This section guides you through submitting an enhancement suggestion for UHMI, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion and find related suggestions
+
+When you are creating an enhancement suggestion, please include as many details as possible. Fill in the template, including the steps that you imagine you would take if the feature you're requesting existed.
+
+Enhancement suggestions are tracked as Github Issuess <T.B.D add a link here>, create an issue on that repository and provide the following information:
+
+* Use a clear and descriptive title for the issue to identify the suggestion.
+* Specify which version of UHMI you're using.
+* Specify the name and version of the OS you're using.
+* Provide a step-by-step description of the suggested enhancement in as many details as possible.
+* Provide specific examples to demonstrate the steps. Include copy/pasteable snippets which you use in those examples, as Markdown code blocks.
+* Describe the current behavior and explain which behavior you expected to see instead and why.
+* Include screenshots and animated GIFs which help you demonstrate the steps if you have.
+* Explain why this enhancement would be useful.
+
+Please enter `Issue`_  for finding how to suggest new enhancement.
+
+Creating Pull Requests for fixing issues
+----------------------------------------
+You can start working on a contribution that was already asked for, or that you’ve already discussed, in an issue.
+
+The process described here has several goals:
+
+* Maintain project's quality.
+* Fix problems that are important to users.
+* Engage the community in working toward the best possible UHMI.
+* Enable a sustainable system for UHMI's maintainers to review contributions.
+
+More details how to create a Pull request, please find in `Steps for making changes and creating Pull request`_.
+
+
+Issue and Pull Request
+**********************
+
+Issue
+-----
+
+Contributor can raise a bug issue or enhancement via Github Issues <T.B.D Add link here>.
+
+.. image:: /images/openGithubIssue.PNG
+   :alt: Github Issues
+
+**How to create an issue in Github:**
+
+**Step 1:** On GitHub.com, navigate to the main page of the repository.
+
+**Step 2:** Under your repository name, click **Issues**, click **New Issue**.
+
+**Step 3:** Choose an Issue template, click **Get started**
+
+.. image:: /images/issueTemplate.PNG
+   :alt: Github Issues Template
+
+**Step 4:** Fill to all fields mentioned in the template.
+
+**Step 5:** When you're finished, click **Submit new issue**.
+
+
+Steps for making changes and creating Pull request
+--------------------------------------------------
+
+After finding an issue you are working on, you will start making changes:
+
+**Step 1: Fork**
+
+Fork the project on Github and clone your fork locally.
+
+.. code-block:: shell
+
+    $  git clone https://github.com:username/UnifiedHMI.git
+    $  cd UHMI
+    $  git remote add upstream https://github.com/UnifiedHMI/UnifiedHMI.git
+    $  git fetch upstream
+
+**Step 2: Branch**
+
+To keep your development environment organized, create local branches to hold your work. These should be branched directly off of the main branch.
+
+
+.. code-block:: shell
+
+    $ git checkout -b my-branch -t upstream/main
+
+**Step 3: Code**
+
+Contributor need to follow some modifying rules as below:
+
+- Do not include non-opensource or non-public source code.
+- There are no internal comments and references to other non-public sources.
+- Coding style need to be consistent in UHMI project.
+- When you want to create a new source code file, make sure **Copyright** notices and **License** notices must be commended in the start of file.
+
+**Step 4: Commit​**
+
+It is recommended to keep your changes grouped logically within individual commits. Many contributors find it easier to review changes that are split across multiple commits. There is no limit to the number of commits in a pull request.
+A good commit message should describe what changed and why.
+Link Github issue to commit message follow syntax: #<issue number>
+
+.. code-block:: shell
+
+    $ git add my/changed/files
+    $ git commit
+
+**Step 5: Rebase​**
+
+Once you have committed your changes, it is a good idea to use git rebase (not git merge) to synchronize your work with the main repository.
+
+.. code-block:: shell
+
+    $ git fetch upstream
+    $ git rebase upstream/main
+
+This ensures that your working branch has the latest changes.
+
+**Step 6: Push​**
+
+Once your commits are ready to go -- with passing tests and linting -- begin the process of opening a pull request by pushing your working branch to your fork on Github.
+
+.. code-block:: shell
+
+    $ git push origin my-branch
+
+**Step 7: Opening the Pull Request​**
+
+From within Github, opening a new pull request will present you with a template that should be filled out:
+
+.. image:: /images/createPQ.PNG
+   :alt: Create Pull Request
+
+Link Github issue to Pull request description follow syntax: #<issue number>
+
+**Step 8: Discuss and update​**
+
+You will probably get feedback or requests for changes to your pull request. This is a big part of the submission process so don't be discouraged! Some contributors may sign off on the pull request right away. Others may have detailed comments or feedback. This is a necessary part of the process in order to evaluate whether the changes are correct and necessary.
+
+To make changes to an existing pull request, make the changes to your local branch, add a new commit with those changes, and push those to your fork. GitHub will automatically update the pull request.
+
+.. code-block:: shell
+
+    $ git add my/changed/files
+    $ git commit
+    $ git push origin my-branch
+
+There are a number of more advanced mechanisms for managing commits using git rebase that can be used, but are beyond the scope of this guide.
+
+Feel free to post a comment in the pull request to ping reviewers if you are awaiting an answer on something.
+
+All pull requests require approval from a Code Owner of the area you modified in order to land. Whenever a maintainer reviews a pull request they may request changes. These may be small, such as fixing a typo, or may involve substantive changes. Such requests are intended to be helpful, but at times may come across as abrupt or unhelpful, especially if they do not include concrete suggestions on how to change them.
+
+Try not to be discouraged. If you feel that a review is unfair, say so or seek the input of another project contributor. Often such comments are the result of a reviewer having taken insufficient time to review and are not ill-intended. Such difficulties can often be resolved with a bit of patience. That said, reviewers should be expected to provide helpful feedback.
+
+**Step 9: Merging​**
+
+In order to land, a pull request needs to be reviewed and approved by at least one UHMI Code Owner. After that, if there are no objections from other contributors, the pull request can be merged.
+
+Congratulations and thanks for your contribution!
+
+How can you get help if needed
+******************************
+
+If you have any problem, please feel free to contact us via email <T.B.D>.
+
