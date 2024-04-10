@@ -1,177 +1,32 @@
-<!DOCTYPE html>
-<html class="writer-html4" lang="en" >
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Unified HMI &mdash; UnifiedHMI 1.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Welcome to Unified HMI" href="pages/welcome.html" /> 
-</head>
+---
+title: Reference
+---
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="#" class="icon icon-home"> UnifiedHMI
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption"><span class="caption-text">Contents</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="pages/welcome.html">Welcome to Unified HMI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/howtoget.html">How to Get It</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/howtosetup.html">How to Set up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/howtouse.html">How to Use</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/howtocontribute.html">How to Contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/license.html">LICENSE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/code_of_conduct.html">Contributor Covenant Code of Conduct</a></li>
-</ul>
-
+<div id="hero_bottom_strip">
+    <div class="container">
+        <div id="hero_section" class="row vertical-center-child">
+            <div class="col-xs-12 col-sm-5 agl-bot">
+                <img src="{{ site.baseurl }}{{ site.logo.underconstruction }}" style="width:100%" style="margin:50px 50px"/>
+            </div>
+            <div class="col-xs-12 col-sm-7 hero_content">
+				<!-- <img class="hero_logo hidden-xs" src="{{ site.baseurl }}{{ site.logo.textonly }}"/> -->
+                <!-- <img class="hero_logo visible-xs" src="{{ site.baseurl }}/docs/6. Reference/under-construction.png" /> -->
+                <p>This page is under construction...</p>
+            </div>
         </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">UnifiedHMI</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>Welcome to Unified HMI</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <div class="section" id="welcome-to-unified-hmi">
-<h1>Welcome to Unified HMI<a class="headerlink" href="#welcome-to-unified-hmi" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="vision">
-<h2>Vision<a class="headerlink" href="#vision" title="Permalink to this headline">¶</a></h2>
-<p>This software can realize the cockpit vision as shown in the picture below.</p>
-<img alt="Our cockpit vision" src="_images/20180220_AGL-AMM2018_Winter_Keynote_r06_02.png" />
-<p><strong>Total “Comfort &amp; Safety” System with our AV&amp;ICT Technology.</strong></p>
-<p>In this system, not only the center display, but also the rear mirrors, side mirrors and meters are digitized.
-In addition, the windshield displays augmented reality information.</p>
-<p>By digitizing, this system can not only output the input of the camera etc. to the display, but also provide various added values by the intervention of “processing”, and can support safe driving.</p>
-</div>
-<div class="section" id="architecture">
-<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
-<p>The architecture for realizing the above vision is shown in the figure below.</p>
-<img alt="Architecture" src="_images/20180220_AGL-AMM2018_Winter_Keynote_r06_11.png" />
-<p>If an application wants to control multiple displays in combination with each other, the system controls each display by virtually consolidating the frame memory within the system.
-As a result, applications running on a particular subsystem can process and draw multiple displays at once, to the extent permitted by their privileges.</p>
-</div>
-<div class="section" id="loadmap">
-<h2>Loadmap<a class="headerlink" href="#loadmap" title="Permalink to this headline">¶</a></h2>
-<p>T.B.D.</p>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="pages/welcome.html">Welcome to Unified HMI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pages/welcome.html#vision">Vision</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/welcome.html#architecture">Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/welcome.html#loadmap">Loadmap</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pages/howtoget.html">How to Get It</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pages/howtoget.html#about">About</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/howtoget.html#setup-development-pc">Setup development PC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/howtoget.html#downloading-agl-software">Downloading AGL Software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/howtoget.html#initialize-buid-and-deploy">Initialize, Buid and Deploy</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pages/howtosetup.html">How to Set up</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pages/howtosetup.html#environment-setup">Environment Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/howtosetup.html#linux-kernel-update">Linux kernel update</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/howtosetup.html#install-remote-virtio-gpu">Install remote-virtio-gpu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/howtosetup.html#ubuntu-wayland-switch">Ubuntu Wayland Switch</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pages/howtouse.html">How to Use</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/howtocontribute.html">How to Contribute</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pages/howtocontribute.html#contributing">Contributing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/howtocontribute.html#issue-and-pull-request">Issue and Pull Request</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/howtocontribute.html#how-can-you-get-help-if-needed">How can you get help if needed</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pages/license.html">LICENSE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/code_of_conduct.html">Contributor Covenant Code of Conduct</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pages/code_of_conduct.html#our-pledge">Our Pledge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/code_of_conduct.html#our-standards">Our Standards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/code_of_conduct.html#enforcement-responsibilities">Enforcement Responsibilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/code_of_conduct.html#scope">Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/code_of_conduct.html#enforcement">Enforcement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/code_of_conduct.html#enforcement-guidelines">Enforcement Guidelines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/code_of_conduct.html#attribution">Attribution</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="section" id="indexes-and-tables">
-<h1>Indexes and tables<a class="headerlink" href="#indexes-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
-</ul>
-</div>
-
-
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pages/welcome.html" class="btn btn-neutral float-right" title="Welcome to Unified HMI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <div class="row" style="margin:50px 50px">
+        </div>
     </div>
+</div>
+<div class="blue-divider"></div>
 
-  <hr/>
 
-  <div role="contentinfo">
-    <p>&#169; Copyright 2021, Panasonic Corporation.</p>
-  </div>
+<!-- /container -->
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+<div class="container-fluid dark vertical-aligned-columns">
+    <div class="container">
+    </div><!-- /container -->
 
-</footer>
-        </div>
-      </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+<!-- {% include tools_and_showcase.html %} -->
 
-</body>
-</html>
+</div><!-- /container-fluid -->
